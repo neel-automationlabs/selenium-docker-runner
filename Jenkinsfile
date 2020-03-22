@@ -3,11 +3,11 @@ pipeline {
     agent any
     stages {
         stage('Pull Latest Image') {
-                    steps {
-                        //sh
-                        bat "docker pull pneel141/selenium-docker"
-                    }
-                }
+            steps {
+                //sh
+                bat "docker pull pneel141/selenium-docker"
+            }
+        }
         stage('Start Grid') {
             steps {
                 //sh
