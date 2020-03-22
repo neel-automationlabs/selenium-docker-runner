@@ -14,10 +14,11 @@ pipeline {
                 bat "docker-compose up book-flight-module-chrome book-flight-module_firfox"
             }
         }
-        stage('Stop Grid'){
-            steps{
-                bat "docker-compose down"
-            }
+    }
+    post{
+        always{
+            archiveArtifacts artifacts: 'output/**'
+            bat "docker-compose down"
         }
     }
 }
